@@ -39,6 +39,7 @@ class _StateLayoutMobileScreen1 extends State<LayoutMobileScreen1> {
                   width: 50.0,
                   fit: BoxFit.contain,
                 ),
+                onTap: () => _navigateTo(context, widget.seccio, index),
               );
             });
       }

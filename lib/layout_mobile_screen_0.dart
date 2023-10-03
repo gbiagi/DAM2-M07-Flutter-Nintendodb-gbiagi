@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nintendo_db/app.dart';
 import 'package:nintendo_db/layout_mobile_screen_1.dart';
 
 class LayoutMobileScreen0 extends StatefulWidget {

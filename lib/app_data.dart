@@ -36,14 +36,7 @@ class AppData with ChangeNotifier {
     return;
   }
 
-  dynamic getItemData(String type, int index) {
-    if (dataReady(type)) {
-      return getData(type)[index];
-    }
-    return;
-  }
-
-  // Escull quin arxiu cal llegir i en carrega les dades
+// Escull quin arxiu cal llegir i en carrega les dades
   void load(String type) async {
 // Escollim l'arxiu d'on s'han de carregar les dades
     var arxiu = "";
@@ -80,5 +73,12 @@ class AppData with ChangeNotifier {
     }
 // Avisem que les dades estàn disponibles
     notifyListeners();
+  }
+
+  dynamic getItemData(String type, int index) {
+    if (dataReady(type)) {
+      return getData(type)[index];
+    }
+    return;
   }
 }
