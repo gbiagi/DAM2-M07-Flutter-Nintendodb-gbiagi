@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class layout_joc extends StatelessWidget {
+class LayoutJoc extends StatelessWidget {
   final dynamic itemData;
 
 // Constructor
-  layout_joc({Key? key, required this.itemData}) : super(key: key);
+  LayoutJoc({Key? key, required this.itemData}) : super(key: key);
 
 // ... aquí la funció ‘build’ definida a la següent diapositiva
   @override
@@ -29,19 +29,23 @@ class layout_joc extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "${itemData['data']}".substring(0, 4),
-                  style: const TextStyle(fontSize: 15, color: Colors.grey),
+                  "${itemData['any']}",
+                  style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
                 ),
-                const SizedBox(height: 10),
                 Text(
                   "${itemData['tipus']}",
                   style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold),
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 5), // salto entre textos
-                Text(
-                  "${itemData['descripcio']}",
-                  style: const TextStyle(fontSize: 15),
+                Padding(
+                  padding: EdgeInsets.all(10.0), // Adjust the padding as needed
+                  child: Text(
+                    "${itemData['descripcio']}",
+                    style: const TextStyle(fontSize: 15),
+                  ),
                 ),
               ],
             ),

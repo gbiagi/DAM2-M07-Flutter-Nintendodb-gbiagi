@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class layout_consola extends StatelessWidget {
+class LayoutConsola extends StatelessWidget {
   final dynamic itemData;
 
 // Relacionar els colors amb el text que els defineix
@@ -11,10 +11,12 @@ class layout_consola extends StatelessWidget {
     'orange': Colors.orange,
     'brown': Colors.brown,
     'grey': Colors.grey,
+    'purple': Colors.purple,
+    'white': Colors.white
   };
 
 // Constructor
-  layout_consola({Key? key, required this.itemData}) : super(key: key);
+  LayoutConsola({Key? key, required this.itemData}) : super(key: key);
 
 // Retornar un 'Color' a partir del text, fent servir el mapa de colors anterior
   Color getColorFromString(String colorString) {
@@ -48,27 +50,33 @@ class layout_consola extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    color: getColorFromString(itemData['color']),
+                  ),
                   width: 25,
                   height: 25,
-                  color: getColorFromString(itemData['color']),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   "${itemData['data']}".substring(0, 4),
-                  style: const TextStyle(fontSize: 15, color: Colors.grey),
+                  style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   "${itemData['procesador']}",
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                      fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   '${itemData['venudes']} venudes',
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                 ),
               ],
             ),
