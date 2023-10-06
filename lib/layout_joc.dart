@@ -42,11 +42,17 @@ class LayoutJoc extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.all(15.0),
-                  child: Text(
-                    "${itemData['descripcio']}",
-                    style: const TextStyle(fontSize: 15),
+                  child: Container(
+                    // Ajustar la medida del container para forzar scroll
+                    height: 125,
+                    child: SingleChildScrollView(
+                      child: Text(
+                        "${itemData['descripcio']}",
+                        style: const TextStyle(fontSize: 15),
+                      ),
+                    ),
                   ),
-                ),
+                )
               ],
             ),
           ),
